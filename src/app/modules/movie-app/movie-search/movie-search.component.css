@@ -1,0 +1,74 @@
+body {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/084/971/small/cinema-movie-concept-popcorn-and-clapperboard-photo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+.movie-container {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 60px; /* Increased padding for larger container */
+    border-radius: 50px; /* Increased border radius for a rounded look */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    text-align: center;
+    animation: grow 0.8s ease-in-out;
+}
+
+.search-box-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.search-box {
+    width: 400px;
+    padding: 20px;
+    border: none;
+    border-radius: 35px;
+    outline: none;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: width 0.5s ease;
+}
+
+.search-box:focus {
+    width: 500px;
+}
+
+button {
+    padding: 10px 20px; /* Decreased button padding */
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+/* Animation Keyframes */
+@keyframes grow {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

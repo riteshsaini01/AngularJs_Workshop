@@ -1,0 +1,18 @@
+<!-- list-topics.component.html -->
+<section id="list-topics" class="list-topics">
+  <div class="container">
+    <div class="list-topics-content">
+      <ul>
+        <li *ngFor="let topic of topics">
+          <div class="single-list-topics-content">
+            <div class="single-list-topics-icon">
+              <i class="{{ topic.icon }}"></i>
+            </div>
+            <h2><a href="#">{{ topic.title }}</a></h2>
+            <p>{{ topic.listings }} listings</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div><!--/.container-->
+</section>

@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "angular--project-e7181",
+    "development": "angular--project-e7181"
+  },
+  "targets": {},
+  "etags": {}
+}

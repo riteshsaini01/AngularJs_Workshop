@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Search</title>
+<style>
+    body {
+        background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fthumbnails%2F006%2F084%2F971%2Fsmall%2Fcinema-movie-concept-popcorn-and-clapperboard-photo.jpg&tbnid=ph-xv_q-F9H7zM&vet=10CAwQxiAoA2oXChMIwNPSq9LThAMVAAAAAB0AAAAAEAc..i&imgrefurl=https%3A%2F%2Fwww.vecteezy.com%2Ffree-photos%2Fmovie&docid=-whIEt50NelZhM&w=300&h=200&itg=1&q=movie%20website%20background%20images&ved=0CAwQxiAoA2oXChMIwNPSq9LThAMVAAAAAB0AAAAAEAc');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .movie-container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-box {
+        width: 200px;
+        padding: 10px;
+        border: 2px solid #3498db;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .search-box:focus {
+        border-color: #2980b9;
+    }
+</style>
+</head>
+<body>
+    <div class="center">
+        <h1><u>Enter the movie name:</u></h1>
+        <div class="movie-container">
+            <input type="text" [(ngModel)]="movieName" class="search-box" placeholder="Enter movie name...">
+            <button (click)="searchMovie()">Search Movie</button>
+            <p>Your username is: {{ username }}</p>
+            <div *ngIf="movieDetails">
+                <h2>{{ movieDetails.Title }} ({{ movieDetails.Year }})</h2>
+                <div class="poster-container">
+                    <img src="{{ movieDetails.Poster }}" alt="{{ movieDetails.Title }} Poster">
+                </div>
+
+                <table class="details-table">
+                    <tr>
+                        <td><strong>Rated:</strong></td>
+                        <td>{{ movieDetails.Rated }}</td>
+                    </tr>
+                    <!-- Include other movie details here -->
+                </table>
+
+                <p><strong>Plot:</strong> {{ movieDetails.Plot }}</p>
+
+                <h3>Ratings</h3>
+                <ul>
+                    <li *ngFor="let rating of movieDetails.Ratings">
+                        {{ rating.Source }}: {{ rating.Value }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
